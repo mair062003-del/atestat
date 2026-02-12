@@ -17,6 +17,7 @@ st.markdown("""
 Структура предметов и модулей определяется **автоматически**.
 """)
 
+# GitHub Deploy Update (Forced)
 # Sidebar
 st.sidebar.header("Настройки")
 uploaded_file = st.sidebar.file_uploader("Загрузите Excel файл (Полотно)", type=['xlsx'])
