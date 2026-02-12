@@ -2,3 +2,17 @@ output/
 __pycache__/
 *.pyc
 *.zip
+*.pdf
+temp_*
+*.log
+.DS_Store
+.vscode/
+.idea/
+pdf_analysis.txt
+pdf_layout_structure.txt
+pdf_structure_analysis.txt
+pdf_coords_debug.txt
+subjects_list.txt
+*.htm
+*.files/
+module_structure.json
