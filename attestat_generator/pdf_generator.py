@@ -26,12 +26,29 @@ except Exception as e:
 
 # Register Fonts
 try:
-    pdfmetrics.registerFont(TTFont('Arial', 'C:\\Windows\\Fonts\\arial.ttf'))
-    pdfmetrics.registerFont(TTFont('Arial-Bold', 'C:\\Windows\\Fonts\\arialbd.ttf'))
-    GLOBAL_FONT_NAME = 'Arial'
-    GLOBAL_FONT_BOLD_NAME = 'Arial-Bold'
-except:
-    print("Warning: Arial font not found. Using Helvetica.")
+    # Use relative paths for portability (works on Windows/Linux/Cloud)
+    font_dir = os.path.join(SCRIPT_DIR, 'fonts')
+    arial_path = os.path.join(font_dir, 'arial.ttf')
+    arialbd_path = os.path.join(font_dir, 'arialbd.ttf')
+    
+    if os.path.exists(arial_path) and os.path.exists(arialbd_path):
+        pdfmetrics.registerFont(TTFont('Arial', arial_path))
+        pdfmetrics.registerFont(TTFont('Arial-Bold', arialbd_path))
+        GLOBAL_FONT_NAME = 'Arial'
+        GLOBAL_FONT_BOLD_NAME = 'Arial-Bold'
+    else:
+        # Fallback to system fonts (Windows only) or Helvetica
+        if os.path.exists('C:\\Windows\\Fonts\\arial.ttf'):
+             pdfmetrics.registerFont(TTFont('Arial', 'C:\\Windows\\Fonts\\arial.ttf'))
+             pdfmetrics.registerFont(TTFont('Arial-Bold', 'C:\\Windows\\Fonts\\arialbd.ttf'))
+             GLOBAL_FONT_NAME = 'Arial'
+             GLOBAL_FONT_BOLD_NAME = 'Arial-Bold'
+        else:
+             print("Warning: Arial font not found in local or system path. Using Helvetica.")
+             GLOBAL_FONT_NAME = 'Helvetica'
+             GLOBAL_FONT_BOLD_NAME = 'Helvetica-Bold'
+except Exception as e:
+    print(f"Error registering font: {e}")
     GLOBAL_FONT_NAME = 'Helvetica'
     GLOBAL_FONT_BOLD_NAME = 'Helvetica-Bold'
 
