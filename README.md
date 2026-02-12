@@ -1,32 +1,30 @@
-# Attestat Generator
+# 🎓 Генератор Аттестатов (PDF)
 
-Tool for automating the generation of student attestats from Excel data into Word templates.
+Автоматическая генерация аттестатов в PDF формате из Excel ведомости.
 
-## Features
-- **Web Interface**: Easy-to-use browser interface using Streamlit.
-- **Bilingual Support**: Handles Kazakh and Russian subject names.
-- **Complex Layouts**: Supports arbitrary Word template layouts.
-- **Grade Conversion**: Automatically converts numeric grades to Letter grades and GPA points.
+## 🚀 Как запустить (Локально)
 
-## Installation
-
-1. Install Python 3.8+
-2. Install dependencies:
+1. Установите Python 3.9+
+2. Установите зависимости:
    ```bash
-   pip install pandas openpyxl docxtpl streamlit
+   pip install -r requirements.txt
+   ```
+3. Запустите приложение:
+   ```bash
+   streamlit run streamlit_pdf_app.py
    ```
 
-## Usage
+## ☁️ Как опубликовать (Cloud)
 
-1. Run the app:
-   ```bash
-   streamlit run app.py
-   ```
-2. Upload your Excel file (Canvas) and Word Template.
-3. Download the generated attestats.
+### ❌ Vercel (НЕ РАБОТАЕТ)
+Vercel выдаст ошибку **404 NOT FOUND** или Timeout, так как это приложение требует Python сервера.
 
-## Project Structure
-- `app.py`: Main web application.
-- `data_loader.py`: logic for reading Excel and processing grades.
-- `subjects_mapping.json`: Configuration for subject translations.
-- `templates/`: Directory for default templates.
+### ✅ Streamlit Cloud (РЕКОМЕНДУЕТСЯ)
+Это бесплатно и специально для таких приложений.
+
+1. Зайдите на [share.streamlit.io](https://share.streamlit.io/) (войдите через GitHub).
+2. Нажмите **New App**.
+3. Выберите репозиторий: `mair062003-del/atestat`.
+4. Branch: `main`.
+5. **Main file path**: `streamlit_pdf_app.py` (ВАЖНО!).
+6. Нажмите **Deploy**.
