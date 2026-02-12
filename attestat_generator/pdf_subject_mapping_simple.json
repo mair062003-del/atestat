@@ -1,0 +1,254 @@
+{
+  "page_1_left": {
+    "start_y": 269.45,
+    "line_height": 17.64,
+    "x_number": 24.36,
+    "x_subject": 43.56,
+    "x_hours": 184.1,
+    "x_score": 258.98,
+    "x_letter": 281.45,
+    "x_point": 319.49,
+    "subjects": [
+      {
+        "row_number": 1,
+        "excel_name": "Математика"
+      },
+      {
+        "row_number": 2,
+        "excel_name": "Информатика"
+      },
+      {
+        "row_number": 3,
+        "excel_name": "Қазақ тілі"
+      },
+      {
+        "row_number": 4,
+        "excel_name": "Қазақ әдебиеті"
+      },
+      {
+        "row_number": 5,
+        "excel_name": "Орыс тілі және әдебиеті"
+      },
+      {
+        "row_number": 6,
+        "excel_name": "Шет тілі"
+      },
+      {
+        "row_number": 7,
+        "excel_name": "Қазақстан тарихы"
+      },
+      {
+        "row_number": 8,
+        "excel_name": "Дене шынықтыру"
+      },
+      {
+        "row_number": 9,
+        "excel_name": "Алғашқы әскери және технологиялық дайындық"
+      },
+      {
+        "row_number": 10,
+        "excel_name": "Биология"
+      }
+    ]
+  },
+  "page_1_right": {
+    "start_y": 548.52,
+    "line_height": 14.16,
+    "x_number": 448.75,
+    "x_subject": 467.83,
+    "x_hours": 609.07,
+    "x_score": 685.66,
+    "x_letter": 708.1,
+    "x_point": 746.14,
+    "subjects": [
+      {
+        "row_number": 11,
+        "excel_name": "Дүниежүзі тарихы"
+      },
+      {
+        "row_number": 12,
+        "excel_name": "Физика"
+      },
+      {
+        "row_number": 13,
+        "excel_name": "Химия"
+      },
+      {
+        "row_number": 14,
+        "excel_name": "Анатомия, физиология және мектеп  гигиенасы"
+      },
+      {
+        "row_number": 15,
+        "excel_name": "Ақпараттық-коммуникациялық технологиялар"
+      },
+      {
+        "row_number": 16,
+        "excel_name": "Сандық технологиялар"
+      },
+      {
+        "row_number": 17,
+        "excel_name": "Педагогика (жалпы негіздері, тәрбие теориясы)"
+      },
+      {
+        "row_number": 18,
+        "excel_name": "Этнопедагогика"
+      },
+      {
+        "row_number": 19,
+        "excel_name": "Психология"
+      },
+      {
+        "row_number": 20,
+        "excel_name": "Жаңа  педагогикалық  технологиялар"
+      },
+      {
+        "row_number": 21,
+        "excel_name": "Кәсіптік орыс тілі"
+      },
+      {
+        "row_number": 22,
+        "excel_name": "Кәсіптік шетел тілі"
+      },
+      {
+        "row_number": 23,
+        "excel_name": "Мемлекеттік тілде іс-қағаздарын жүргізу"
+      },
+      {
+        "row_number": 24,
+        "excel_name": "Тәрбие жұмысының әдістемесі"
+      },
+      {
+        "row_number": 25,
+        "excel_name": "Педагогикалық шеберлік негіздері"
+      },
+      {
+        "row_number": 26,
+        "excel_name": "Инклюзивті білім беру негіздері"
+      },
+      {
+        "row_number": 27,
+        "excel_name": "Шағын комплектілі мектепте оқу-тәрбие жұмысын ұйымдастыру"
+      },
+      {
+        "row_number": 28,
+        "excel_name": "Педагогика (дидактика)"
+      },
+      {
+        "row_number": 29,
+        "excel_name": "Каллиграфия"
+      },
+      {
+        "row_number": 30,
+        "excel_name": "Функционалдық сауаттылықты дамыту"
+      },
+      {
+        "row_number": 31,
+        "excel_name": "Балалар әдебиеті"
+      },
+      {
+        "row_number": 32,
+        "excel_name": "Жаратылыстану және дүниетануды оқыту әдістемесі"
+      },
+      {
+        "row_number": 33,
+        "excel_name": "Дене тәрбиесі оқыту әдістемесімен, ырғақ"
+      },
+      {
+        "row_number": 34,
+        "excel_name": "Көркем еңбек оқыту әдістемесі"
+      },
+      {
+        "row_number": 35,
+        "excel_name": "Музыка және оқыту әдістемесі"
+      }
+    ]
+  },
+  "page_2_left": {
+    "start_y": 549.96,
+    "line_height": 13.38,
+    "x_number": 21.6,
+    "x_subject": 39.72,
+    "x_hours": 179.18,
+    "x_score": 252.98,
+    "x_letter": 275.57,
+    "x_point": 313.49,
+    "subjects": [
+      {
+        "row_number": 36,
+        "excel_name": "Критериалды бағалау технологиясы"
+      },
+      {
+        "row_number": 37,
+        "excel_name": "Жаңартылған білім беру мазмұны ерекшеліктері"
+      },
+      {
+        "row_number": 38,
+        "excel_name": "Педагогикалық  рефлексия"
+      },
+      {
+        "row_number": 39,
+        "excel_name": "Ғылыми-педагогикалық зерттеу әдістемесі"
+      },
+      {
+        "row_number": 40,
+        "excel_name": "Педагогикалық менеджмент"
+      },
+      {
+        "row_number": 41,
+        "excel_name": "Педагогикалық этика"
+      },
+      {
+        "row_number": 42,
+        "excel_name": "Физика бойынша сауаттылық"
+      },
+      {
+        "row_number": 43,
+        "excel_name": "География бойынша сауаттылық"
+      },
+      {
+        "row_number": 44,
+        "excel_name": "Дінтану"
+      },
+      {
+        "row_number": 45,
+        "excel_name": "Өлкетану"
+      },
+      {
+        "row_number": 46,
+        "excel_name": "Сыбайлас жемқорлыққа қарсы мәдениет"
+      },
+      {
+        "row_number": 47,
+        "excel_name": "Логопедия және дефектология негіздері"
+      },
+      {
+        "row_number": 48,
+        "excel_name": "Психотерапия"
+      }
+    ]
+  },
+  "page_2_right": {
+    "start_y": 549.96,
+    "line_height": 13.38,
+    "x_number": 448.75,
+    "x_subject": 467.83,
+    "x_hours": 609.07,
+    "x_score": 685.66,
+    "x_letter": 708.1,
+    "x_point": 746.14,
+    "subjects": [
+      {
+        "row_number": 49,
+        "excel_name": "Мәнерлеп оқу практикумы"
+      },
+      {
+        "row_number": 50,
+        "excel_name": "Риторика"
+      },
+      {
+        "row_number": 51,
+        "excel_name": "Бастауыш сыныптағы жасанды интеллект"
+      }
+    ]
+  }
+}
