@@ -29,7 +29,7 @@ if st.sidebar.button("🔄 Сбросить загруженные данные"
     st.rerun()
 
 # Check for Template Images
-bg_path = os.path.join("data", "шаблон каз.jpg")
+bg_path = os.path.join("data", "template_kz.jpg")
 if not os.path.exists(bg_path):
     st.error(f"❌ Шаблон фона не найден: {bg_path}")
     st.info("Пожалуйста, убедитесь, что файл 'шаблон каз.jpg' находится в папке 'data/'.")
@@ -297,35 +297,36 @@ if uploaded_file and os.path.exists(bg_path):
                 
                 # Generate PDF in memory
                 generator = PDFGenerator(background_image_path=bg_path)
-                preview_buffer = io.BytesIO()
                 
-                # Use a temp file because reportlab canvas needs a filename or file-like object
-                # But my PDFGenerator implementation (checked earlier) accepts output_path as string for canvas constructor
-                # Wait, canvas.Canvas(filename) accepts string OR file-like object. 
-                # My implementation: c = canvas.Canvas(output_path, ...)
-                # So passing io.BytesIO() should work!
-                
-                # However, earlier I used a temp string path. Let's stick to temp file to be practically safe with image loading etc.
-                preview_temp_path = f"preview_{student_id}.pdf"
+                import tempfile
+                import base64
                 
                 try:
-                    generator.generate(student_layout, preview_temp_path, overrides=st.session_state.layout_overrides[student_id])
-                    
-                    # Read back
-                    with open(preview_temp_path, "rb") as f:
-                        pdf_bytes = f.read()
+                    # Use a true temporary file
+                    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp_file:
+                        generator.generate(student_layout, tmp_file.name, overrides=st.session_state.layout_overrides[student_id])
+                        
+                        # Read back
+                        # We must re-open to read because generate() closes it? or writes to path.
+                        # generate() takes a path string.
+                        with open(tmp_file.name, "rb") as f:
+                            pdf_bytes = f.read()
+
+                    # Clean up temp file immediately after reading
+                    try:
+                        os.remove(tmp_file.name)
+                    except:
+                        pass
                     
                     # Embed PDF
-                    import base64
                     base64_pdf = base64.b64encode(pdf_bytes).decode('utf-8')
                     pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="100%" height="800" type="application/pdf">'
                     st.markdown(pdf_display, unsafe_allow_html=True)
                     
                 except Exception as e:
                     st.error(f"Ошибка генерации превью: {e}")
-                finally:
-                    if os.path.exists(preview_temp_path):
-                        os.remove(preview_temp_path)
+                    import traceback
+                    st.code(traceback.format_exc())
 
         # --- TAB 3: GENERATION ---
         with tab3:
