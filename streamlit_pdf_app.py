@@ -307,21 +307,42 @@ if uploaded_file and os.path.exists(bg_path):
                         generator.generate(student_layout, tmp_file.name, overrides=st.session_state.layout_overrides[student_id])
                         
                         # Read back
-                        # We must re-open to read because generate() closes it? or writes to path.
-                        # generate() takes a path string.
                         with open(tmp_file.name, "rb") as f:
                             pdf_bytes = f.read()
 
-                    # Clean up temp file immediately after reading
+                    # Try Image Preview (Best for Cloud/Mobile)
+                    image_preview_success = False
+                    try:
+                        from pdf2image import convert_from_path
+                        # This works if poppler is installed (Cloud: via packages.txt / Local: via PATH)
+                        images = convert_from_path(tmp_file.name)
+                        if images:
+                            st.image(images[0], caption="Предпросмотр (Страница 1)", use_container_width=True)
+                            image_preview_success = True
+                    except Exception as img_err:
+                        # Poppler likely not installed locally on Windows
+                        pass
+
+                    # Clean up temp file
                     try:
                         os.remove(tmp_file.name)
                     except:
                         pass
                     
-                    # Embed PDF
-                    base64_pdf = base64.b64encode(pdf_bytes).decode('utf-8')
-                    pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="100%" height="800" type="application/pdf">'
-                    st.markdown(pdf_display, unsafe_allow_html=True)
+                    # Fallback to Embed if image failed
+                    if not image_preview_success:
+                        base64_pdf = base64.b64encode(pdf_bytes).decode('utf-8')
+                        pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="100%" height="800" type="application/pdf">'
+                        st.markdown(pdf_display, unsafe_allow_html=True)
+                        
+                    # Always show Download Button (Fail-safe)
+                    st.download_button(
+                        label="⬇️ Скачать PDF (Preview)",
+                        data=pdf_bytes,
+                        file_name=f"preview_{student.get('name_kz', 'student')}.pdf",
+                        mime="application/pdf",
+                        key=f"dl_prev_{student_id}"
+                    )
                     
                 except Exception as e:
                     st.error(f"Ошибка генерации превью: {e}")
